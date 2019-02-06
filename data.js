@@ -1,7 +1,7 @@
 let productName = ["fannel","jeans","leggings", "scarf","jeggings"];
 let productKeywords = ["shirt", "pants", "accessory", "shoes", "socks"];
 
-let productUrl = ['foo1',
+let productURL = ['foo1',
                   'foo2', 
                   'foo3',
                   'foo4',
@@ -33,6 +33,7 @@ for (i = 1; i < 100; i++){
   schemaObj.id = i;
   schemaObj.name = randomItemInArray(productName);
   schemaObj.keywords = randomItemInArray(productKeywords);
+  schemaObj.url = randomItemInArray(productURL);
 
   productsAll.push(schemaObj); //[{}]
 }
