@@ -7,12 +7,12 @@ const productSchema = new mongoose.Schema({
   price: Number,
   url: String,
   qty: Number,
-  type: String,
+  keywords: String,
 });
 
 let product = mongoose.model('product', repoSchema);
 
-
+module.exports = product;
 
 
 // var newProduct = new Schema({ 
