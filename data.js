@@ -7,15 +7,7 @@ let productURL = ['foo1',
                   'foo4',
                   ]
 
-var schemaObj = 
-{
-  "id": 000001,
-  "name": "Shirt",
-  "price": 6.99,
-  "url": "asdf",
-  "qty": 99,
-  "keywords": "shirt, red,"
-}
+
 
 let productsAll = [];
 //randomizer helper functon
@@ -30,13 +22,23 @@ function randomItemInArray(array) {
 
 //populate obj 
 for (i = 1; i < 100; i++){
+   var schemaObj = 
+                {
+                  "id": 1,
+                  "name": "Shirt",
+                  "price": 6.99,
+                  "url": "asdf",
+                  "qty": 99,
+                  "keywords": "shirt, red,"
+                }
+
   schemaObj.id = i;
   schemaObj.name = randomItemInArray(productName);
   schemaObj.keywords = randomItemInArray(productKeywords);
   schemaObj.url = randomItemInArray(productURL);
-
   productsAll.push(schemaObj); //[{}]
 }
+
 
 
 // [
