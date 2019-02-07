@@ -1,5 +1,5 @@
 const product = require('/index.js');
-
+const mongoose = require('mongoose');
 
 //randomizer helper functon
 function generateRandomNumber(min, max) {
@@ -39,120 +39,16 @@ function populateData() {
     schemaObj.keywords = randomItemInArray(productKeywords);
     schemaObj.url = randomItemInArray(productURL);
     productsAll.push(schemaObj); //[{}]
+  }
 }
 
 //forEach in feed data into Db
 function savingDB(){
-  productsAll.forEach((product) => {//the individual product
-    product.save();//save into database
+  productsAll.forEach((pro) => {//the individual product
+    pro.save();//save into database
+
+    //db.mDB.insert({"name" : "some string"})
   });
 }
 
 savingDB();
-// [
-//   {
-//     "id": 000001,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000002,
-//     "name": "Shirt",
-//     "price": 7.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000003,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000004,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000005,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000006,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000007,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000008,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000009,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000010,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000011,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000001,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-//   {
-//     "id": 000001,
-//     "name": "Shirt",
-//     "price": 6.99,
-//     "url": "asdf",
-//     "qty": 99,
-//     "keywords": "shirt, red,"
-//   },
-
-// ]
